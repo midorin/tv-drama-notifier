@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テレビドラマ再放送通知アプリ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📺 テレビドラマ再放送通知</h1>
+            <p class="subtitle">お気に入りのドラマを登録して、再放送を見逃さない！</p>
+        </header>
+
+        <main>
+            <!-- ドラマ登録フォーム -->
+            <section class="add-drama-section">
+                <h2>ドラマを登録</h2>
+                <form id="addDramaForm">
+                    <div class="form-group">
+                        <label for="dramaTitle">ドラマタイトル</label>
+                        <input type="text" id="dramaTitle" placeholder="例: コウノドリ" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dramaYear">放送年（任意）</label>
+                        <input type="text" id="dramaYear" placeholder="例: 2015">
+                    </div>
+                    <div class="form-group">
+                        <label for="dramaNotes">メモ（任意）</label>
+                        <textarea id="dramaNotes" placeholder="例: 第3話から見たい" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">登録する</button>
+                </form>
+            </section>
+
+            <!-- 登録済みドラマ一覧 -->
+            <section class="drama-list-section">
+                <h2>登録済みドラマ（<span id="dramaCount">0</span>件）</h2>
+                <div id="dramaList" class="drama-list">
+                    <p class="empty-message">まだドラマが登録されていません。</p>
+                </div>
+            </section>
+
+            <!-- 通知設定 -->
+            <section class="notification-section">
+                <h2>通知設定</h2>
+                <div class="notification-info">
+                    <p>ブラウザ通知を有効にすると、再放送情報をお知らせします。</p>
+                    <button id="enableNotificationBtn" class="btn btn-secondary">通知を有効にする</button>
+                    <p id="notificationStatus" class="status-text"></p>
+                </div>
+                <div class="info-box">
+                    <h3>💡 使い方のヒント</h3>
+                    <ul>
+                        <li>気になるドラマのタイトルを登録しておきましょう</li>
+                        <li>番組表サイトで再放送情報を確認したら、メモ欄に記録できます</li>
+                        <li>定期的にチェックして、見逃さないようにしましょう</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 テレビドラマ再放送通知アプリ</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
