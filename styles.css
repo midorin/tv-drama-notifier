@@ -247,6 +247,165 @@ footer {
     font-size: 0.9rem;
 }
 
+/* カレンダーセクション */
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.calendar-controls h3 {
+    color: #333;
+    font-size: 1.2rem;
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+
+.calendar {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.calendar-day-name {
+    text-align: center;
+    font-weight: 600;
+    color: #666;
+    padding: 10px 5px;
+    font-size: 0.9rem;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-height: 60px;
+}
+
+.calendar-day:hover {
+    background: #e8eeff;
+}
+
+.calendar-day.other-month {
+    opacity: 0.3;
+}
+
+.calendar-day.today {
+    background: #fff9e6;
+    font-weight: 700;
+    border: 2px solid #ffd93d;
+}
+
+.calendar-day.has-event {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day.has-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.calendar-day-number {
+    font-size: 1rem;
+}
+
+.calendar-day-events {
+    font-size: 0.7rem;
+    margin-top: 2px;
+}
+
+/* 直近の予定 */
+.upcoming-list {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.upcoming-list h3 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.upcoming-item {
+    background: white;
+    border-left: 4px solid #667eea;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.upcoming-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-item.soon {
+    border-left-color: #ff4757;
+    background: #fff5f5;
+}
+
+.upcoming-date {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.upcoming-item.soon .upcoming-date {
+    color: #ff4757;
+}
+
+.upcoming-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.upcoming-time {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.rerun-datetime {
+    background: #fff9e6;
+    border-left: 3px solid #ffd93d;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
 /* レスポンシブ */
 @media (max-width: 600px) {
     header h1 {
@@ -263,5 +422,18 @@ footer {
 
     .drama-title {
         font-size: 1.1rem;
+    }
+
+    .calendar-controls {
+        flex-wrap: wrap;
+    }
+
+    .calendar-day {
+        min-height: 50px;
+        font-size: 0.85rem;
+    }
+
+    .calendar-day-events {
+        font-size: 0.6rem;
     }
 }

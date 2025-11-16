@@ -27,11 +27,30 @@
                         <input type="text" id="dramaYear" placeholder="例: 2015">
                     </div>
                     <div class="form-group">
+                        <label for="rerunDate">再放送日時（任意）</label>
+                        <input type="datetime-local" id="rerunDate">
+                    </div>
+                    <div class="form-group">
                         <label for="dramaNotes">メモ（任意）</label>
                         <textarea id="dramaNotes" placeholder="例: 第3話から見たい" rows="2"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">登録する</button>
                 </form>
+            </section>
+
+            <!-- 再放送カレンダー -->
+            <section class="calendar-section">
+                <h2>📅 再放送カレンダー</h2>
+                <div class="calendar-controls">
+                    <button id="prevMonth" class="btn btn-secondary">◀ 前月</button>
+                    <h3 id="currentMonth"></h3>
+                    <button id="nextMonth" class="btn btn-secondary">次月 ▶</button>
+                </div>
+                <div id="calendar" class="calendar"></div>
+                <div id="upcomingList" class="upcoming-list">
+                    <h3>📌 直近の予定</h3>
+                    <div id="upcomingDramas"></div>
+                </div>
             </section>
 
             <!-- 登録済みドラマ一覧 -->
